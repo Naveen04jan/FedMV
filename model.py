@@ -7,17 +7,16 @@ from tensorflow.keras.layers import (
 )
 from pykalman import KalmanFilter
 
-# --- MC DROPOUT CHANGE: Custom Dropout Layer ---
-# This layer will allow us to force dropout to be active during inference.
+
 class MCDropout(Dropout):
     def call(self, inputs, training=None):
         # The 'training' flag is the key. If we pass training=True,
         # this layer will perform dropout even during model.predict().
         return super().call(inputs, training=True)
-# --- END MC DROPOUT CHANGE ---
+
 
 def apply_kalman_filter(data):
-    # Add a check for empty or very short data
+   
     if data is None or len(data) == 0:
         return np.array([])
         
@@ -26,17 +25,17 @@ def apply_kalman_filter(data):
         (filtered_state_means, _) = kf.filter(data)
         return filtered_state_means.flatten() # Ensure 1D output
     except Exception as e:
-        # Catch errors from Kalman (e.g., singular matrix)
+        
         print(f"Kalman filter failed on data with len {len(data)}: {e}. Returning original data.")
         return data
 
 def create_dataset(static_data, time_varying_data, target_data, time_step=6):
     X_static, X_time_varying, y = [], [], []
     
-    # Get the total number of samples we can create
+    
     num_samples = len(time_varying_data) - time_step
 
-    # Check if we have enough data to create even one sample
+    
     if num_samples <= 0:
         if target_data is not None:
             return np.array([]), np.array([]), np.array([])
@@ -84,10 +83,10 @@ def build_tft_inspired_model(static_input_shape, time_varying_input_shape, num_h
     
     attention = LayerNormalization(epsilon=1e-6)(attention + gru_out)
     
-    # --- MC DROPOUT CHANGE: Use the custom layer ---
-    # This will now apply dropout during both training and evaluation
+   
+    
     attention = MCDropout(dropout_rate)(attention)
-    # --- END MC DROPOUT CHANGE ---
+   
     
     pooled = GlobalAveragePooling1D()(attention)
     
@@ -102,7 +101,7 @@ def build_tft_inspired_model(static_input_shape, time_varying_input_shape, num_h
     
     return model
 
-# Helper functions for personalization (no changes needed)
+
 def get_global_weights(model):
     global_weights = []
     for layer in model.layers:
