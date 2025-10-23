@@ -14,7 +14,7 @@ class CustomStrategy(fl.server.strategy.FedAvg):
             'mse': (float('inf'), -1),
             'rmse': (float('inf'), -1),
             'mae': (float('inf'), -1),
-            # --- MC DROPOUT CHANGE: Track new metric ---
+            
             'avg_prediction_std': (float('inf'), -1)
         }
         self.num_rounds = num_rounds
@@ -80,7 +80,7 @@ class CustomStrategy(fl.server.strategy.FedAvg):
         # --- MC DROPOUT CHANGE: Aggregate new metric ---
         pred_std_values = [r.metrics['avg_prediction_std'] for _, r in valid_results]
         avg_pred_std = np.mean(pred_std_values)
-        # --- END MC DROPOUT CHANGE ---
+        
         
         test_rmse_values = [np.sqrt(mse) for mse in test_mse_values]
 
@@ -109,18 +109,18 @@ class CustomStrategy(fl.server.strategy.FedAvg):
         if avg_mae < self.best_metrics['mae'][0]:
             self.best_metrics['mae'] = (avg_mae, rnd)
             
-        # --- MC DROPOUT CHANGE: Track best (lowest) uncertainty ---
+        
         if avg_pred_std < self.best_metrics['avg_prediction_std'][0]:
             self.best_metrics['avg_prediction_std'] = (avg_pred_std, rnd)
-        # --- END MC DROPOUT CHANGE ---
+       
 
         print(f"\nEvaluation metrics for round {rnd}:")
         print(f"Test MSE: {avg_mse:.4f}")
         print(f"Test RMSE: {avg_rmse:.4f}")
         print(f"Test MAE: {avg_mae:.4f}")
-        # --- MC DROPOUT CHANGE: Print new metric ---
+        
         print(f"Avg Prediction Std Dev: {avg_pred_std:.4f}")
-        # --- END MC DROPOUT CHANGE ---
+        
 
         if rnd == self.num_rounds:
             self.save_metrics_history()
