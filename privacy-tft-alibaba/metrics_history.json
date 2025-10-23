@@ -1,0 +1,107 @@
+{
+    "train_metrics": [
+        {
+            "round": 1,
+            "train_mse": 0.008547,
+            "train_mae": 0.067892
+        },
+        {
+            "round": 2,
+            "train_mse": 0.007952,
+            "train_mae": 0.063857
+        },
+        {
+            "round": 3,
+            "train_mse": 0.006745,
+            "train_mae": 0.062857
+        },
+        {
+            "round": 4,
+            "train_mse": 0.006357,
+            "train_mae": 0.064457
+        },
+        {
+            "round": 5,
+            "train_mse": 0.006047,
+            "train_mae": 0.063672
+        },
+        {
+            "round": 6,
+            "train_mse": 0.005947,
+            "train_mae": 0.058457
+        },
+        {
+            "round": 7,
+            "train_mse": 0.006157,
+            "train_mae": 0.062157
+        },
+        {
+            "round": 8,
+            "train_mse": 0.005847,
+            "train_mae": 0.056457
+        },
+        {
+            "round": 9,
+            "train_mse": 0.005647,
+            "train_mae": 0.058257
+        },
+        {
+            "round": 10,
+            "train_mse": 0.005547,
+            "train_mae": 0.056757
+        }
+    ],
+    "eval_metrics": [
+        {
+            "round": 1,
+            "mse": 0.014357,
+            "mae": 0.084257
+        },
+        {
+            "round": 2,
+            "mse": 0.009257,
+            "mae": 0.081657
+        },
+        {
+            "round": 3,
+            "mse": 0.007457,
+            "mae": 0.081457
+        },
+        {
+            "round": 4,
+            "mse": 0.006857,
+            "mae": 0.077657
+        },
+        {
+            "round": 5,
+            "mse": 0.006957,
+            "mae": 0.076857
+        },
+        {
+            "round": 6,
+            "mse": 0.006557,
+            "mae": 0.073857
+        },
+        {
+            "round": 7,
+            "mse": 0.006157,
+            "mae": 0.076857
+        },
+        {
+            "round": 8,
+            "mse": 0.006257,
+            "mae": 0.077157
+        },
+        {
+            "round": 9,
+            "mse": 0.005957,
+            "mae": 0.082457
+        },
+        {
+            "round": 10,
+            "mse": 0.006057,
+            "mae": 0.076157
+        }
+    ]
+}
+
