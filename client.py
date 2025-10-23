@@ -18,9 +18,9 @@ class TimeSeriesClient(fl.client.NumPyClient):
         self.csv_files = self.load_csv_files(client_id)
         self.epochs = EPOCHS
         
-        # --- MC DROPOUT CHANGE: Number of forward passes for prediction ---
+       
         self.mc_samples = 50
-        # --- END MC DROPOUT CHANGE ---
+       
 
         static_shape, time_varying_shape = self._get_input_shapes()
         if static_shape is None or time_varying_shape is None:
@@ -149,9 +149,9 @@ class TimeSeriesClient(fl.client.NumPyClient):
         total_mae = 0
         total_samples = 0
         
-        # --- MC DROPOUT CHANGE: Store uncertainty metric ---
+       
         total_prediction_variance = 0.0
-        # --- END MC DROPOUT CHANGE ---
+        
 
         for file in self.csv_files:
             try:
@@ -169,25 +169,23 @@ class TimeSeriesClient(fl.client.NumPyClient):
                 if len(y) == 0:
                     continue
 
-                # --- MC DROPOUT CHANGE: Perform multiple forward passes ---
-                # The model's MCDropout layer is always active.
-                # We call predict multiple times to get a distribution.
+               
                 mc_predictions = []
                 for _ in range(self.mc_samples):
                     y_pred = self.model.predict([X_static, X_time_varying], verbose=0)
                     mc_predictions.append(y_pred)
 
-                # Stack predictions to easily calculate mean and variance
+                
                 mc_predictions = np.stack(mc_predictions, axis=0)  # Shape: (mc_samples, num_data_points, 1)
 
-                # Calculate mean prediction and prediction variance
+                
                 mean_predictions = np.mean(mc_predictions, axis=0) # Shape: (num_data_points, 1)
                 prediction_variance = np.var(mc_predictions, axis=0) # Shape: (num_data_points, 1)
                 
-                # Average variance across all data points in this file
+                
                 avg_file_variance = np.mean(prediction_variance)
                 
-                # Calculate metrics using the MEAN of the predictions
+               
                 mse = np.mean(np.square(y - mean_predictions.flatten()))
                 mae = np.mean(np.abs(y - mean_predictions.flatten()))
                 # --- END MC DROPOUT CHANGE ---
@@ -207,15 +205,14 @@ class TimeSeriesClient(fl.client.NumPyClient):
         avg_mse = total_mse / total_samples
         avg_mae = total_mae / total_samples
         
-        # --- MC DROPOUT CHANGE: Calculate average prediction uncertainty ---
-        # The average standard deviation is a good measure of uncertainty
+        
         avg_prediction_std = np.sqrt(total_prediction_variance / total_samples)
-        # --- END MC DROPOUT CHANGE ---
+      
 
         return float(avg_mse), total_samples, {
             'test_mse': float(avg_mse),
             'test_mae': float(avg_mae),
-            # --- MC DROPOUT CHANGE: Return new metric ---
+           
             'avg_prediction_std': float(avg_prediction_std)
         }
 
