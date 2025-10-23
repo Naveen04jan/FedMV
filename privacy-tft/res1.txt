@@ -1,0 +1,180 @@
+Aggregated training metrics for round 1:
+Train MSE: 0.0119
+Train RMSE: 0.1089
+Train MAE: 0.0630
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Best weights saved to best_weights.npy
+
+Evaluation metrics for round 1:
+Test MSE: 0.0322
+Test RMSE: 0.1769
+Test MAE: 0.1241
+INFO :      
+INFO :      [ROUND 2]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 2:
+Train MSE: 0.0193
+Train RMSE: 0.1366
+Train MAE: 0.0840
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 2:
+Test MSE: 0.0363
+Test RMSE: 0.1889
+Test MAE: 0.1522
+INFO :      
+INFO :      [ROUND 3]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 3:
+Train MSE: 0.0250
+Train RMSE: 0.1561
+Train MAE: 0.0997
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 3:
+Test MSE: 0.0325
+Test RMSE: 0.1773
+Test MAE: 0.1138
+INFO :      
+INFO :      [ROUND 4]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 4:
+Train MSE: 0.0257
+Train RMSE: 0.1589
+Train MAE: 0.1012
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 4:
+Test MSE: 0.0325
+Test RMSE: 0.1775
+Test MAE: 0.1194
+INFO :      
+INFO :      [ROUND 5]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 5:
+Train MSE: 0.0291
+Train RMSE: 0.1685
+Train MAE: 0.1096
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 5:
+Test MSE: 0.0326
+Test RMSE: 0.1778
+Test MAE: 0.1211
+INFO :      
+INFO :      [ROUND 6]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 6:
+Train MSE: 0.0264
+Train RMSE: 0.1591
+Train MAE: 0.1042
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 6:
+Test MSE: 0.0505
+Test RMSE: 0.2216
+Test MAE: 0.1344
+INFO :      
+INFO :      [ROUND 7]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 7:
+Train MSE: 0.0216
+Train RMSE: 0.1448
+Train MAE: 0.0906
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 7:
+Test MSE: 0.0358
+Test RMSE: 0.1858
+Test MAE: 0.0970
+INFO :      
+INFO :      [ROUND 8]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 8:
+Train MSE: 0.0277
+Train RMSE: 0.1649
+Train MAE: 0.1059
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 8:
+Test MSE: 0.0346
+Test RMSE: 0.1826
+Test MAE: 0.0993
+INFO :      
+INFO :      [ROUND 9]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 9:
+Train MSE: 0.0272
+Train RMSE: 0.1630
+Train MAE: 0.1046
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 9:
+Test MSE: 0.0362
+Test RMSE: 0.1869
+Test MAE: 0.0965
+INFO :      
+INFO :      [ROUND 10]
+INFO :      configure_fit: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_fit: received 10 results and 0 failures
+
+Aggregated training metrics for round 10:
+Train MSE: 0.0247
+Train RMSE: 0.1553
+Train MAE: 0.0986
+INFO :      configure_evaluate: strategy sampled 10 clients (out of 10)
+INFO :      aggregate_evaluate: received 10 results and 0 failures
+
+Evaluation metrics for round 10:
+Test MSE: 0.0336
+Test RMSE: 0.1801
+Test MAE: 0.1023
+
+Metrics history saved to metrics_history.json
+
+Final Training Summary:
+==================================================
+Best MSE: 0.0322 (achieved in round 1)
+Best RMSE: 0.1769 (achieved in round 1)
+Best MAE: 0.0965 (achieved in round 9)
+==================================================
+INFO :      
+INFO :      [SUMMARY]
+INFO :      Run finished 10 rounds in 19024.12s
+INFO :      History (loss, distributed):
+INFO :          ('\tround 1: 0.03220599124255961\n'
+INFO :           '\tround 2: 0.03634779947748356\n'
+INFO :           '\tround 3: 0.032475893507247736\n'
+INFO :           '\tround 4: 0.03250681826008827\n'
+INFO :           '\tround 5: 0.03258153334950108\n'
+INFO :           '\tround 6: 0.050471262995354996\n'
+INFO :           '\tround 7: 0.03579175501244884\n'
+INFO :           '\tround 8: 0.034572116845341165\n'
+INFO :           '\tround 9: 0.0362181193766549\n'
+INFO :           '\tround 10: 0.033609275940125874\n')
